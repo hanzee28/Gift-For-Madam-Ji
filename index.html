@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Birthday Gift For Madam Ji</title>
+
+<!-- Google Fonts for Stylish Theme -->
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Pacifico&display=swap" rel="stylesheet">
+
+<style>
+body{
+  margin:0;
+  font-family:'Montserrat', sans-serif;
+  background:linear-gradient(120deg,#1a1a2e,#162447,#1f4068,#e43f5a);
+  color:white;
+  overflow:hidden;
+}
+
+.page{
+  position:absolute;
+  width:100%;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  transform:translateX(100%);
+  transition:1s ease;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(5px);
+  border-radius:15px;
+  box-shadow:0 0 50px rgba(0,0,0,0.5);
+}
+
+.active{
+  transform:translateX(0%);
+}
+
+button{
+  padding:14px 28px;
+  margin-top:25px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  background:linear-gradient(135deg,#ff4e50,#fc913a,#f9d423);
+  color:white;
+  font-weight:600;
+  box-shadow:0 5px 20px rgba(0,0,0,0.3);
+  transition:0.3s;
+}
+button:hover{
+  transform:scale(1.1);
+  box-shadow:0 8px 25px rgba(0,0,0,0.5);
+}
+
+h1{
+  font-family:'Pacifico', cursive;
+  font-size:3em;
+  text-shadow: 2px 2px 10px rgba(0,0,0,0.6);
+  animation:fadeIn 2s ease-in-out;
+}
+
+p{
+  font-size:1.2em;
+  line-height:1.6em;
+  animation:fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn{
+  from{opacity:0; transform:translateY(20px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+.date{
+  margin-top:10px;
+  font-size:18px;
+  font-weight:600;
+  opacity:0.9;
+}
+
+/* Gift Box */
+.gift{
+  width:160px;
+  height:160px;
+  background:#e43f5a;
+  position:relative;
+  cursor:pointer;
+  border-radius:15px;
+  box-shadow:0 0 25px rgba(0,0,0,0.6);
+  transition: all 1s ease;
+  overflow:hidden;
+}
+
+.gift .lid{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:50px;
+  background:gold;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  transition: all 1s ease;
+}
+
+.gift.open .lid{
+  transform: rotateX(-120deg);
+  transform-origin: top;
+}
+
+/* Slideshow */
+.slide-img{
+  max-width:80%;
+  max-height:70vh;
+  border-radius:20px;
+  display:block;
+  box-shadow:0 0 40px rgba(255,255,255,0.5);
+  transition:1s ease;
+}
+
+/* Scroll page */
+.scroll{
+  overflow-y:auto;
+}
+
+/* Videos Styling */
+video{
+  border-radius:15px;
+  margin:10px;
+  box-shadow:0 0 25px rgba(0,0,0,0.5);
+}
+
+/* Fireworks */
+canvas{
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h1>Hello Madam Ji 💐</h1>
+  <p>I hope you are doing well and smiling today.</p>
+  <div class="date">07/03/2026</div>
+  <button onclick="nextPage()">Let’s Continue ✨</button>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h1>Birthday Blessings For You 🤲</h1>
+  <p>
+  May Allah bless you with long life, good health, peace and endless success.<br>
+  May your journey always be filled with barakah and light.<br>
+  Ameen.
+  </p>
+  <button onclick="nextPage()">Want Gift 🎁</button>
+</div>
+
+<!-- PAGE 3 -->
+<div class="page" id="page3">
+  <h1>Click The Gift Box 🎁</h1>
+  <div class="gift" id="giftBox" onclick="openGift()">
+    <div class="lid"></div>
+  </div>
+  <p id="giftText"></p>
+  <button onclick="nextPage()">Next Surprise ➡</button>
+</div>
+
+<!-- PAGE 4 -->
+<div class="page" id="page4">
+  <h1>World's Best Poet & Motivational Speaker 🌟</h1>
+  <img id="slideshow" class="slide-img" src="images/slide1.webp">
+  <audio id="bgMusic" src="music.mp3" loop></audio>
+  <button onclick="nextPage()">See More Memories 💖</button>
+</div>
+
+<!-- PAGE 5 -->
+<div class="page scroll" id="page5">
+  <h1>For The Best Artist & Independent Woman 🎨✨</h1>
+
+  <img src="videos/image1.webp" width="250">
+  <img src="videos/image2.webp" width="250"><br><br>
+
+  <video width="250" autoplay muted loop src="videos/vid1.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid2.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid3.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid4.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid5.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid6.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid7.mp4"></video>
+  <video width="250" autoplay muted loop src="videos/vid8.mp4"></video>
+
+  <button onclick="nextPage()">One More Thing ✨</button>
+</div>
+
+<!-- PAGE 6 -->
+<div class="page" id="page6">
+  <h1>For Madam Ji 💫</h1>
+  <p>
+  You are truly inspiring, thoughtful and graceful.<br>
+  Your words uplift hearts and your presence spreads positivity.<br>
+  You represent strength with dignity and kindness with confidence.<br>
+  The world genuinely benefits from personalities like yours.
+  </p>
+  <button onclick="nextPage()">Final Wish 🎉</button>
+</div>
+
+<!-- PAGE 7 -->
+<div class="page" id="page7">
+  <canvas id="fireworks"></canvas>
+  <h1>Happy Birthday Madam Ji 🎂🎉</h1>
+  <p>
+  May this year bring you remarkable achievements, happiness and success.<br>
+  May Allah protect you, elevate your status and grant you lasting peace.<br>
+  Stay blessed and continue shining always.
+  </p>
+  <p><b>Bye Bye 👋<br>See You Soon 🌸<br>Fee Aman Illah 🤍</b></p>
+</div>
+
+<script>
+let current=1;
+
+function nextPage(){
+  document.getElementById("page"+current).classList.remove("active");
+  current++;
+  document.getElementById("page"+current).classList.add("active");
+
+  if(current===4){
+    startSlideshow();
+    document.getElementById("bgMusic").play();
+  }
+}
+
+// Gift Open Animation
+function openGift(){
+  let giftBox=document.getElementById("giftBox");
+  giftBox.classList.add("open"); 
+  setTimeout(()=>{
+    document.getElementById("giftText").innerHTML=
+      "Your gift will be given after Eid ul Fitr, InshaAllah ✨";
+  }, 1000);
+}
+
+// Slideshow 1–120
+let slideIndex=1;
+let slideshowInterval;
+
+function startSlideshow(){
+  let img=document.getElementById("slideshow");
+  img.style.display="block"; // ensure visible
+  if(slideshowInterval) clearInterval(slideshowInterval);
+  slideshowInterval = setInterval(()=>{
+    slideIndex++;
+    if(slideIndex>120) slideIndex=1;
+    img.src="images/slide"+slideIndex+".webp";
+  },600);
+}
+
+// Fireworks Effect
+let canvas=document.getElementById("fireworks");
+let ctx=canvas.getContext("2d");
+canvas.width=window.innerWidth;
+canvas.height=window.innerHeight;
+
+setInterval(()=>{
+  ctx.fillStyle="rgba(0,0,0,0.15)";
+  ctx.fillRect(0,0,canvas.width,canvas.height);
+  ctx.beginPath();
+  ctx.arc(Math.random()*canvas.width,
+          Math.random()*canvas.height,
+          5,0,Math.PI*2);
+  ctx.fillStyle="gold";
+  ctx.fill();
+},200);
+</script>
+
+</body>
+</html>
